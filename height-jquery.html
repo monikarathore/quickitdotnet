@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .red{background: red;}
+    </style>
+    <script>
+        var Elements = function (selector) {
+            this.elements=document.querySelectorAll(selector)
+            this.length = this.elements.length;
+        }
+
+        Elements.prototype.heightElement = function(){
+          for(var i=0; i<this.elements.length;i=i+1){
+            this.elements[i].clientHeight;
+          }
+          return this.elements[0].clientHeight;
+        }
+
+        var $ = function (selector) {
+            return new Elements(selector);
+        }
+
+
+        var load = function () {
+            $(".divCls").heightElement();
+            console.log($(".divCls").heightElement());
+        }
+    </script>
+  </head>
+  <body onload="load()">
+    <div class="divCls">
+      Hello, <span>Person</span> <em>and person</em>.
+    </div>
+  </body>
+</html

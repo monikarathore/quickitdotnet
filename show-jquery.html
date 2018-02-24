@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .red{background: red;}
+    </style>
+    <script>
+        var Elements = function (selector) {
+            this.elements=document.querySelectorAll(selector)
+            this.length = this.elements.length;
+        }
+
+        Elements.prototype.showElement = function(value){
+          for(var i=0; i<this.elements.length;i=i+1){
+            this.elements[i].style.display = "block";
+          }
+          return this;
+        }
+
+        var $ = function (selector) {
+            return new Elements(selector);
+        }
+
+
+        var load = function () {
+            $(".divCls").showElement();
+        }
+    </script>
+  </head>
+  <body onload="load()">
+    <div class="divCls" style="display:none;">Monika</div>
+  </body>
+</html

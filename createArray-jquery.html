@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .red{background: red;}
+    </style>
+    <script>
+        var Elements = function (selector) {
+            this.elements=document.querySelectorAll(selector)
+            this.length = this.elements.length;
+        }
+
+        Elements.prototype.createArray = function(value){
+          var newArray = [].slice.call(this.elements);
+          return newArray;
+        }
+
+        var $ = function (selector) {
+            return new Elements(selector);
+        }
+
+
+        var load = function () {
+          $("div").createArray();
+          console.log($("div").createArray());
+          
+        }
+    </script>
+  </head>
+  <body onload="load()">
+    <div>First</div>
+    <div>Second</div>
+    <div>Third</div>
+    <div>Fourth</div>
+  </body>
+</html

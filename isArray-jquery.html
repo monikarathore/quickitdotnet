@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .red{background: red;}
+    </style>
+    <script>
+        var Elements = function (selector) {
+            this.elements=document.querySelectorAll(selector)
+            this.length = this.elements.length;
+        }
+
+        Elements.prototype.isArrayJs = function(value){
+          // console.log(Array.isArray(value));
+          // for(var i=0; i<this.elements.length;i=i+1){
+          //   this.elements[i].isArray(value);
+          //   console.log(this.elements[i].Array.isArray(value));
+          // }
+          return Array.isArray(value);
+        }
+
+        var $ = function (selector) {
+            return new Elements(selector);
+        }
+
+
+        var load = function () {
+          var fruits = ["Banana", "Orange", "Apple", "Mango"];
+          console.log($().isArrayJs(fruits));
+          
+        }
+    </script>
+  </head>
+  <body onload="load()">
+    <div class="divCls">
+      Hello, <span>Person</span> <em>and person</em>.
+    </div>
+  </body>
+</html
